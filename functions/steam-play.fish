@@ -5,7 +5,7 @@ function steam-play
     or return 1
   set --local arg (string join ' ' -- $argv)
 
-  if set --query _flag_help
+  if set --query _flag_help; or test -z "$arg"
     __steam_play_help
     return 0
   end
@@ -14,11 +14,6 @@ function steam-play
     __steam_play_fetch
     __steam_play_cache
     return 0
-  end
-
-  if test -z "$arg"
-    printf 'The id or title of a game is required.' >&2
-    return 1
   end
 
   steam "steam://rungameid/$arg"
