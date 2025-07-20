@@ -54,13 +54,14 @@ function __steam_play_help
   steam-play [options] <id|title>
 
 Launch a Steam game specified by its app ID.
-Completion by ID or title is available after fetching the app list by -f/--fetch
-option.
+Completion by ID or title is available.
+The game list is fetched automatically on the first run, or when -f / --fetch is
+used explicitly.  
 Note: Completion is not triggered until at least 3 characters are typed, to
 avoid hanging due to the large number of entries.
 
 Options:
-  -f, --fetch           Fetch the app list of games.
+  -f, --fetch           Fetch the app list of games explicitly.
   -h, --help            Display this help message.
 
 Environment Variable:
